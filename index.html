@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionPlus - Eye Care Clinic</title>
+    <script src="https://cdn.tailwindcss.com" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#64748b',
+                        accent: '#0ea5e9'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        .background-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500%; 
+            height: 100%;
+            display: flex;
+            animation: backgroundSlide 20s infinite;
+            z-index: 0;
+        }
+
+        .background-slide {
+            width: 20%; 
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes backgroundSlide {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-20%); }
+            25% { transform: translateX(-20%); }
+            40% { transform: translateX(-40%); }
+            45% { transform: translateX(-40%); }
+            60% { transform: translateX(-60%); }
+            65% { transform: translateX(-60%); }
+            80% { transform: translateX(-80%); }
+            85% { transform: translateX(-80%); }
+            100% { transform: translateX(0); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(30, 64, 175, 0.85) 0%, 
+                rgba(14, 165, 233, 0.75) 50%, 
+                rgba(147, 51, 234, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+
+<nav class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-primary">VisionPlus</h1>
+                </div>
+            </div>
+            
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                    <a href="Appointments.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Appointments</a>
+                    <a href="eyewear.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Eyewear</a>
+                    <a href="Doctors.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Doctors</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Contact Us</a>
+
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-primary">
+                    <i class="fas fa-user text-lg"></i>
+                </a>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<section class="hero-section">
+   
+    <div class="background-slider">
+  <div class="background-slide" style="background-image: url('Assets/jpg/sliding\ image\ 1.avif');"></div>
+  <div class="background-slide" style="background-image: url('Assets/jpg/sliding\ image\ 2.jpg');"></div>
+  <div class="background-slide" style="background-image: url('Assets/jpg/sliding\ image\ 3.png');"></div>
+  <div class="background-slide" style="background-image: url('Assets/jpg/sliding\ image\ 4.jpg');"></div>
+  <div class="background-slide" style="background-image: url('Assets/jpg/premium_photo-1677333507982-191efa209bc8.jpg');"></div>
+</div>
+
+  
+    <div class="hero-overlay"></div>
+
+   
+    <div class="hero-content">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div class="max-w-4xl space-y-8">
+                <div class="inline-block glass-card rounded-full px-6 py-3 text-sm font-medium text-white animate-fade-in">
+                    <i class="fas fa-eye mr-2"></i>
+                    Your Vision, Our Mission
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-white text-shadow animate-fade-in animate-delay-1">
+                    Get the best treatments<br>
+                    <span class="text-blue-200">and eyewear.</span>
+                </h1>
+                
+                <p class="text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-3xl text-shadow animate-fade-in animate-delay-2">
+                    At VisionPlus, we are committed to providing comprehensive eye care through advanced diagnostic tools, personalized treatments, and expert guidance from experienced professionals.
+                </p>
+                
+                <div class="space-y-4 animate-fade-in animate-delay-2">
+                    <div class="flex items-center space-x-4">
+                        <div class="glass-card rounded-full p-2">
+                            <i class="fas fa-check-circle text-green-300 text-lg"></i>
+                        </div>
+                        <span class="text-xl text-white text-shadow">Best and timely diagnosis</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="glass-card rounded-full p-2">
+                            <i class="fas fa-check-circle text-green-300 text-lg"></i>
+                        </div>
+                        <span class="text-xl text-white text-shadow">Advanced medical equipment</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="glass-card rounded-full p-2">
+                            <i class="fas fa-check-circle text-green-300 text-lg"></i>
+                        </div>
+                        <span class="text-xl text-white text-shadow">Experienced Professionals</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 pt-4 animate-fade-in animate-delay-3">
+                    <button class="bg-white text-primary px-10 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl">
+                        Book a Session
+                        <i class="fas fa-arrow-right ml-3"></i>
+                    </button>
+                    <button class="glass-card text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-white/25 transition-all transform hover:scale-105">
+                        <i class="fas fa-play mr-3"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 animate-fade-in animate-delay-3">
+                    <div class="glass-card rounded-xl p-4 text-center">
+                        <div class="text-3xl font-bold text-white">10K+</div>
+                        <div class="text-blue-200 text-sm">Happy Patients</div>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 text-center">
+                        <div class="text-3xl font-bold text-white">15+</div>
+                        <div class="text-blue-200 text-sm">Expert Doctors</div>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 text-center">
+                        <div class="text-3xl font-bold text-white">24/7</div>
+                        <div class="text-blue-200 text-sm">Support</div>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 text-center">
+                        <div class="text-3xl font-bold text-white">99%</div>
+                        <div class="text-blue-200 text-sm">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive eye care services designed to keep your vision sharp and healthy for years to come.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div class="card-hover bg-white rounded-xl p-8 shadow-lg border">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                    <i class="fas fa-eye text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Eye Examinations</h3>
+                <p class="text-gray-600">Comprehensive eye exams using the latest diagnostic equipment to detect and prevent vision problems.</p>
+            </div>
+            
+            <div class="card-hover bg-white rounded-xl p-8 shadow-lg border">
+                <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                    <i class="fas fa-glasses text-accent text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Eyewear Solutions</h3>
+                <p class="text-gray-600">Premium collection of frames and lenses tailored to your style and vision needs.</p>
+            </div>
+            
+            <div class="card-hover bg-white rounded-xl p-8 shadow-lg border">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                    <i class="fas fa-user-md text-purple-600 text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Expert Consultation</h3>
+                <p class="text-gray-600">Professional guidance from experienced eye care specialists for all your vision concerns.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Eyewear</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Discover our premium collection of eyewear designed for style, comfort, and optimal vision.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <div class="card-hover rounded-2xl overflow-hidden p-0 text-center bg-white shadow-lg">
+    <div class="relative h-40 w-full">
+      <img
+        src="Assets/jpg/prescriptionglasses.jpeg"
+        alt="Prescription Glasses"
+        class="object-cover w-full h-full"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 backdrop-blur-sm text-white py-2 px-4 text-lg font-semibold"
+      >
+        Prescription Glasses
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-gray-600">Premium frames with accurate prescriptions</p>
+    </div>
+  </div>
+
+  <div class="card-hover rounded-2xl overflow-hidden p-0 text-center bg-white shadow-lg">
+    <div class="relative h-40 w-full">
+      <img
+        src="Assets/jpg/sunglasses.avif"
+        alt="Sunglasses"
+        class="object-cover w-full h-full"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 backdrop-blur-sm text-white py-2 px-4 text-lg font-semibold"
+      >
+        Sunglasses
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-gray-600">UV protection with designer styles</p>
+    </div>
+  </div>
+
+  <div class="card-hover rounded-2xl overflow-hidden p-0 text-center bg-white shadow-lg">
+    <div class="relative h-40 w-full">
+      <img
+        src="Assets/pictures/contact lenses.jpg"
+        alt="Contact Lenses"
+        class="object-cover w-full h-full"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 backdrop-blur-sm text-white py-2 px-4 text-lg font-semibold"
+      >
+        Contact Lenses
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-gray-600">Comfortable daily and monthly options</p>
+    </div>
+  </div>
+
+  <div class="card-hover rounded-2xl overflow-hidden p-0 text-center bg-white shadow-lg">
+    <div class="relative h-40 w-full">
+      <img
+        src="Assets/pictures/frames.jpg"
+        alt="Designer Frames"
+        class="object-cover w-full h-full"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 backdrop-blur-sm text-white py-2 px-4 text-lg font-semibold"
+      >
+        Designer Frames
+      </div>
+    </div>
+    <div class="p-6">
+      <p class="text-gray-600">Latest trends from top brands</p>
+    </div>
+  </div>
+</div>
+
+        
+        <div class="text-center mt-12">
+            <button class="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg">
+                Shop Now
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet Our Doctors</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Our experienced team of eye care professionals is dedicated to providing you with the highest quality treatment.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card-hover bg-white rounded-2xl p-8 text-center shadow-lg">
+                <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="Assets/pictures/doctor1.avif" alt="Dr. Sarah Johnson" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Dr. Dr. Ayesha Perera</h3>
+                <p class="text-gray-600 mb-1">Consultant Ophthalmologist</p>
+                <p class="text-sm text-gray-500 mb-6">15+ years experience</p>
+                <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    Book Appointment
+                </button>
+            </div>
+            
+            <div class="card-hover bg-white rounded-2xl p-8 text-center shadow-lg">
+                <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="Assets/pictures/doctor2.avif" alt="Dr. Michael Chen" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Dr. Nuwan Fernando</h3>
+                <p class="text-gray-600 mb-1">Senior Optometrist</p>
+                <p class="text-sm text-gray-500 mb-6">12+ years experience</p>
+                <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    Book Appointment
+                </button>
+            </div>
+            
+            <div class="card-hover bg-white rounded-2xl p-8 text-center shadow-lg">
+                <div class="w-24 h-24 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                    <img src="Assets/pictures/doctor3.jpeg" alt="Dr. Emily Rodriguez" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Dr. Malsha Jayasuriya</h3>
+                <p class="text-gray-600 mb-1">Eye Surgeon</p>
+                <p class="text-sm text-gray-500 mb-6">10+ years experience</p>
+                <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    Book Appointment
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Treatments</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive eye care services using the latest technology and proven treatment methods.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="card-hover group bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-primary">
+                <div class="w-16 h-16 bg-blue-100 group-hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-6 transition-colors">
+                    <i class="fas fa-eye text-primary group-hover:text-white text-2xl transition-colors"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Comprehensive Eye Exams</h3>
+                <p class="text-gray-600 text-sm">Complete vision and eye health assessment</p>
+            </div>
+            
+            <div class="card-hover group bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-primary">
+                <div class="w-16 h-16 bg-green-100 group-hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-6 transition-colors">
+                    <i class="fas fa-microscope text-green-500 group-hover:text-white text-2xl transition-colors"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">LASIK Surgery</h3>
+                <p class="text-gray-600 text-sm">Advanced laser vision correction</p>
+            </div>
+            
+            <div class="card-hover group bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-primary">
+                <div class="w-16 h-16 bg-amber-100 group-hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-6 transition-colors">
+                    <i class="fas fa-heartbeat text-amber-500 group-hover:text-white text-2xl transition-colors"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Glaucoma Treatment</h3>
+                <p class="text-gray-600 text-sm">Early detection and management</p>
+            </div>
+            
+            <div class="card-hover group bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-primary">
+                <div class="w-16 h-16 bg-purple-100 group-hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-6 transition-colors">
+                    <i class="fas fa-shield-alt text-purple-500 group-hover:text-white text-2xl transition-colors"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Retinal Care</h3>
+                <p class="text-gray-600 text-sm">Specialized retinal treatments</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-20 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold mb-6">Get Better Care Today</h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Our doctors are always ready to consult and provide the best solutions. Schedule a meeting online or visit our nearest clinic for personalized eye care.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Schedule Online
+            </button>
+            <button class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-all transform hover:scale-105 shadow-lg border-2 border-blue-600">
+                <i class="fas fa-phone mr-2"></i>
+                Call Now
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-2">
+                <h3 class="text-2xl font-bold mb-4">VisionPlus</h3>
+                <p class="text-gray-400 mb-6 max-w-md">
+                    Your trusted partner in comprehensive eye care, providing advanced treatments and premium eyewear for optimal vision health.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Doctors</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Shop</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        (011) 234567
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        info@visionplus.com
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        12/B  Kingstreet Colombo
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2025 VisionPlus. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

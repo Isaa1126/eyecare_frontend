@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VisionPlus - Our Doctors</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e40af',
+            secondary: '#64748b',
+            accent: '#0ea5e9'
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    .doctor-card {
+      transition: all 0.3s ease;
+    }
+    .doctor-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.15);
+    }
+    .doctor-image {
+      transition: transform 0.3s ease;
+    }
+    .doctor-card:hover .doctor-image {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+
+<nav class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-primary">VisionPlus</h1>
+                </div>
+            </div>
+            
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                    <a href="Appointments.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Appointments</a>
+                    <a href="eyewear.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Eyewear</a>
+                    <a href="Doctors.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Doctors</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Contact Us</a>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-primary">
+                    <i class="fas fa-user text-lg"></i>
+                </a>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<section class="relative bg-gradient-to-r from-primary to-accent py-20 text-white text-center overflow-hidden">
+  <div class="absolute inset-0 bg-black/20"></div>
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+         alt="Medical team background" 
+         class="w-full h-full object-cover opacity-20">
+  </div>
+  <div class="relative max-w-4xl mx-auto px-4">
+    <h2 class="text-5xl font-bold mb-4">Meet Our Expert Doctors</h2>
+    <p class="text-lg text-blue-100">Our professional team of ophthalmologists and optometrists ensures quality care and personalized treatments.</p>
+  </div>
+</section>
+
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      
+      <div class="doctor-card bg-white shadow-lg rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="Assets/pictures/doctor3.jpeg" 
+               alt="Dr. Ayesha Perera - Female Ophthalmologist" 
+               class="doctor-image w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+            Ophthalmologist
+          </div>
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-2xl font-semibold text-primary mb-1">Dr. Ayesha Perera</h3>
+          <p class="text-gray-600 mb-2">Consultant Ophthalmologist</p>
+          <p class="text-sm text-gray-500 mb-3">MBBS, MD (Ophthalmology), FRCS</p>
+          <p class="text-sm text-gray-700 mb-4">Over 10 years of experience in cataract surgery and retina treatments.</p>
+          
+          <div class="flex justify-center space-x-4 text-sm text-gray-600 mb-4">
+            <div class="flex items-center">
+              <i class="fas fa-clock text-primary mr-1"></i>
+              <span>10+ Years</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-award text-primary mr-1"></i>
+              <span>FRCS</span>
+            </div>
+          </div>
+          
+          <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <i class="fas fa-calendar-alt mr-2"></i>Book Appointment
+          </button>
+        </div>
+      </div>
+
+      
+      <div class="doctor-card bg-white shadow-lg rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="Assets/pictures/doctor4.jpeg" 
+               alt="Dr. Nuwan Fernando - Male Optometrist" 
+               class="doctor-image w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+            Optometrist
+          </div>
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-2xl font-semibold text-primary mb-1">Dr. Nuwan Fernando</h3>
+          <p class="text-gray-600 mb-2">Senior Optometrist</p>
+          <p class="text-sm text-gray-500 mb-3">BSc Optometry, MSc Clinical Vision</p>
+          <p class="text-sm text-gray-700 mb-4">Specialist in vision correction and lens consultation with modern diagnostic techniques.</p>
+          
+          <div class="flex justify-center space-x-4 text-sm text-gray-600 mb-4">
+            <div class="flex items-center">
+              <i class="fas fa-clock text-primary mr-1"></i>
+              <span>8+ Years</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-eye text-primary mr-1"></i>
+              <span>Vision Expert</span>
+            </div>
+          </div>
+          
+          <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <i class="fas fa-calendar-alt mr-2"></i>Book Appointment
+          </button>
+        </div>
+      </div>
+
+    
+      <div class="doctor-card bg-white shadow-lg rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="Assets/pictures/doctor5.jpeg" 
+               alt="Dr. Malsha Jayasuriya - Eye Surgeon" 
+               class="doctor-image w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+            Eye Surgeon
+          </div>
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-2xl font-semibold text-primary mb-1">Dr. Malsha Jayasuriya</h3>
+          <p class="text-gray-600 mb-2">Eye Surgeon</p>
+          <p class="text-sm text-gray-500 mb-3">MBBS, MS, Fellowship in LASIK</p>
+          <p class="text-sm text-gray-700 mb-4">Expert in LASIK and advanced laser vision correction procedures with cutting-edge technology.</p>
+          
+          <div class="flex justify-center space-x-4 text-sm text-gray-600 mb-4">
+            <div class="flex items-center">
+              <i class="fas fa-clock text-primary mr-1"></i>
+              <span>12+ Years</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-laser-pointer text-primary mr-1"></i>
+              <span>LASIK Expert</span>
+            </div>
+          </div>
+          
+          <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <i class="fas fa-calendar-alt mr-2"></i>Book Appointment
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Medical Team</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Backed by a dedicated team of healthcare professionals</p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="relative mx-auto w-24 h-24 mb-4 rounded-full overflow-hidden">
+          <img src="Assets/pictures/doctor7.jpeg" 
+               alt="Optical Technician" 
+               class="w-full h-full object-cover">
+        </div>
+        <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
+        <p class="text-sm text-gray-600">Optical Technician</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="relative mx-auto w-24 h-24 mb-4 rounded-full overflow-hidden">
+          <img src="Assets/pictures/doctor6.avif" 
+               alt="Vision Therapist" 
+               class="w-full h-full object-cover">
+        </div>
+        <h4 class="font-semibold text-gray-900">Michael Chen</h4>
+        <p class="text-sm text-gray-600">Vision Therapist</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="relative mx-auto w-24 h-24 mb-4 rounded-full overflow-hidden">
+          <img src="Assets/pictures/doctor8.jpeg" 
+               alt="Contact Lens Specialist" 
+               class="w-full h-full object-cover">
+        </div>
+        <h4 class="font-semibold text-gray-900">Emma Davis</h4>
+        <p class="text-sm text-gray-600">Contact Lens Specialist</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="relative mx-auto w-24 h-24 mb-4 rounded-full overflow-hidden">
+          <img src="Assets/pictures/doctor9.jpeg" 
+               alt="Patient Care Coordinator" 
+               class="w-full h-full object-cover">
+        </div>
+        <h4 class="font-semibold text-gray-900">David Wilson</h4>
+        <p class="text-sm text-gray-600">Patient Care Coordinator</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Professional Credentials & Equipment</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="relative mx-auto w-32 h-32 mb-6 rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+               alt="Advanced Eye Testing Equipment" 
+               class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Advanced Diagnostics</h3>
+        <p class="text-gray-600">State-of-the-art equipment for precise eye examinations</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="relative mx-auto w-32 h-32 mb-6 rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+               alt="Medical Certifications" 
+               class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Board Certified</h3>
+        <p class="text-gray-600">All doctors are board-certified with international qualifications</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="relative mx-auto w-32 h-32 mb-6 rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+               alt="Continuous Education" 
+               class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Continuous Learning</h3>
+        <p class="text-gray-600">Regular training on latest techniques and technologies</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-primary text-white text-center">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-4">Need Expert Advice?</h2>
+    <p class="text-lg mb-6 text-blue-100">Book an appointment with one of our specialists today and take the first step toward better vision.</p>
+    <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg inline-block transform hover:scale-105">
+      <i class="fas fa-user-md mr-2"></i> Book Appointment
+    </a>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white py-8">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <p>&copy; 2025 VisionPlus. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

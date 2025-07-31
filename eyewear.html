@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VisionPlus - Eyewear</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1e40af",
+            secondary: "#64748b",
+            accent: "#0ea5e9",
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .eyewear-image {
+      transition: transform 0.3s ease;
+    }
+    .card-hover:hover .eyewear-image {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+<nav class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-primary">VisionPlus</h1>
+                </div>
+            </div>
+            
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                    <a href="Appointments.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Appointments</a>
+                    <a href="eyewear.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Eyewear</a>
+                    <a href="Doctors.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Doctors</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Contact Us</a>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-primary">
+                    <i class="fas fa-user text-lg"></i>
+                </a>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<header class="relative bg-primary text-white py-20 overflow-hidden">
+  <div class="absolute inset-0 bg-black/30"></div>
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+         alt="Eyewear collection display" 
+         class="w-full h-full object-cover opacity-40">
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-5xl font-bold mb-4">Eyewear Collection</h1>
+    <p class="text-xl max-w-2xl mx-auto">
+      Discover premium eyewear brands, contact lenses, specs, and stylish frames tailored for you.
+    </p>
+  </div>
+</header>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">Expert Eyewear Consultation</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          Our experienced optometrists work with you to find the perfect eyewear solution that matches your prescription, lifestyle, and personal style preferences.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-user-md text-primary text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Professional Fitting</h3>
+              <p class="text-gray-600">Precise measurements and adjustments</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-eye text-primary text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Vision Analysis</h3>
+              <p class="text-gray-600">Comprehensive eye examination</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-palette text-primary text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Style Consultation</h3>
+              <p class="text-gray-600">Find frames that complement your features</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <img src="Assets/pictures/doctor4.jpeg" 
+               alt="Optometrist consulting with patient about eyewear" 
+               class="w-full h-96 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-2xl font-bold mb-2">Personal Care</h3>
+            <p class="text-lg opacity-90">One-on-one consultation with our experts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Eyewear</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Explore our curated selection of eyewear combining style and function.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    
+      <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/prescription_glasses.avif" 
+               alt="Prescription glasses on display" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-glasses text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Prescription Glasses</h3>
+          <p class="text-gray-600">Premium frames with accurate prescriptions</p>
+        </div>
+      </div>
+
+      
+      <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/sunglasses.avif" 
+               alt="Designer sunglasses collection" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <div class="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-sun text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Sunglasses</h3>
+          <p class="text-gray-600">UV protection with designer styles</p>
+        </div>
+      </div>
+
+   
+      <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/contact lenses.jpg" 
+               alt="Contact lens fitting consultation" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-circle text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Contact Lenses</h3>
+          <p class="text-gray-600">Comfortable daily and monthly options</p>
+        </div>
+      </div>
+
+      <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/dsigner.png" 
+               alt="Designer frames selection" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-square text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Designer Frames</h3>
+          <p class="text-gray-600">Latest trends from top brands</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Eyewear Brands</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        We carry top brands trusted worldwide for quality and style.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-8 items-center">
+      <img
+        src="C:\Users\USER\Desktop\NEW PROJECT CODES\eyewere\EYEware\Assets\pictures\Screenshot 2025-07-31 115136.png"
+        alt="Ray-Ban"
+        class="mx-auto max-h-12 object-contain opacity-70 hover:opacity-100 transition-opacity"
+      />
+      <img
+        src="C:\Users\USER\Desktop\NEW PROJECT CODES\eyewere\EYEware\Assets\pictures\Screenshot 2025-07-31 115544.png"
+        alt="Prada"
+        class="mx-auto max-h-12 object-contain opacity-70 hover:opacity-100 transition-opacity"
+      />
+      <img
+        src="C:\Users\USER\Desktop\NEW PROJECT CODES\eyewere\EYEware\Assets\pictures\Screenshot 2025-07-31 115446.png"
+        alt="Gucci"
+        class="mx-auto max-h-12 object-contain opacity-70 hover:opacity-100 transition-opacity"
+      />
+      <img
+        src="C:\Users\USER\Desktop\NEW PROJECT CODES\eyewere\EYEware\Assets\pictures\Screenshot 2025-07-31 115714.png"
+        alt="Armani"
+        class="mx-auto max-h-12 object-contain opacity-70 hover:opacity-100 transition-opacity"
+      />
+      <img
+        src="C:\Users\USER\Desktop\NEW PROJECT CODES\eyewere\EYEware\Assets\pictures\Screenshot 2025-07-31 115834.png"
+        alt="Burberry"
+        class="mx-auto max-h-12 object-contain opacity-70 hover:opacity-100 transition-opacity"
+      />
+      <img
+        src="C:\Users\USER\Desktop\NEW PROJECT CODES\eyewere\EYEware\Assets\pictures\Screenshot 2025-07-31 120022.png"
+        alt="Dior"
+        class="mx-auto max-h-12 object-contain opacity-70 hover:opacity-100 transition-opacity"
+      />
+    </div>
+  </div>
+</section>
+
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Patient Experience</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how we help our patients find their perfect eyewear</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="relative mx-auto w-48 h-48 mb-6 rounded-full overflow-hidden">
+          <img src="Assets/pictures/examing.png" 
+               alt="Eye examination process" 
+               class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Comprehensive Examination</h3>
+        <p class="text-gray-600">Thorough eye testing with state-of-the-art equipment</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="relative mx-auto w-48 h-48 mb-6 rounded-full overflow-hidden">
+          <img src="Assets/pictures/frames.jpg" 
+               alt="Patient trying on glasses" 
+               class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Frame Selection</h3>
+        <p class="text-gray-600">Try on various styles to find your perfect match</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="relative mx-auto w-48 h-48 mb-6 rounded-full overflow-hidden">
+          <img src="Assets/pictures/perfect_fit.jpeg" 
+               alt="Happy patient with new glasses" 
+               class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Perfect Fit</h3>
+        <p class="text-gray-600">Professional fitting and adjustment for optimal comfort</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Lenses</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Explore our comfortable and safe daily, weekly, and monthly contact lens options.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+ 
+      <div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg border">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/daily (1).jpeg" 
+               alt="Daily contact lenses" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-calendar-day text-green-500 text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Daily Lenses</h3>
+          <p class="text-gray-600">
+            Convenient, single-use lenses for fresh vision every day.
+          </p>
+        </div>
+      </div>
+
+      <div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg border">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/weekly.jpeg" 
+               alt="Weekly contact lenses consultation" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-calendar-week text-blue-500 text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Weekly Lenses</h3>
+          <p class="text-gray-600">
+            High comfort lenses designed for weekly replacement.
+          </p>
+        </div>
+      </div>
+
+      
+      <div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg border">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/monthly.jpeg" 
+               alt="Monthly contact lenses examination" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-calendar-alt text-purple-500 text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Monthly Lenses</h3>
+          <p class="text-gray-600">
+            Durable lenses providing clear vision for up to a month.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Specs & Types</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Understand the different types of spectacles and which one fits your vision needs.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     
+      <div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg border">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets\pictures\single.png" 
+               alt="Single vision glasses examination" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-glasses text-blue-600 text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Single Vision</h3>
+          <p class="text-gray-600">
+            Corrects for one field of vision — near or far.
+          </p>
+        </div>
+      </div>
+
+     
+      <div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg border">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/bifocal.jpeg" 
+               alt="Bifocal glasses consultation" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-layer-group text-green-600 text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Bifocal</h3>
+          <p class="text-gray-600">
+            Two distinct optical powers in one lens for near and distance.
+          </p>
+        </div>
+      </div>
+
+      
+      <div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg border">
+        <div class="h-48 overflow-hidden">
+          <img src="Assets/pictures/progressive.jpeg" 
+               alt="Progressive lenses fitting" 
+               class="eyewear-image w-full h-full object-cover">
+        </div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-circle-notch text-purple-600 text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Progressive</h3>
+          <p class="text-gray-600">
+            Gradual transition between multiple lens powers for seamless vision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Specs Frames</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Choose from a variety of frames that complement your style and comfort.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <div class="card-hover rounded-2xl overflow-hidden text-center bg-white shadow-lg">
+        <div class="relative h-40 w-full">
+          <img src="Assets/jpg/squreframe.webp" alt="Square Frames" class="object-cover w-full h-full" />
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 backdrop-blur-sm text-white py-2 px-4 text-lg font-semibold">
+            Square Frames
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600">Bold frames that add structure and style.</p>
+        </div>
+      </div>
+
+      <div class="card-hover rounded-2xl overflow-hidden text-center bg-white shadow-lg">
+        <div class="relative h-40 w-full">
+          <img src="Assets/jpg/roundframe.avif" alt="Round Frames" class="object-cover w-full h-full" />
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 backdrop-blur-sm text-white py-2 px-4 text-lg font-semibold">
+            Round Frames
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600">Classic and versatile look.</p>
+        </div>
+      </div>
+
+      <div class="card-hover rounded-2xl overflow-hidden text-center bg-white shadow-lg">
+        <div class="relative h-40 w-full">
+          <img src="Assets/jpg/hexagonframe.webp" alt="Hexagonal Frames" class="object-cover w-full h-full" />
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 backdrop-blur-sm text-white py-2 px-4 text-lg font-semibold">
+            Hexagonal Frames
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600">Modern geometric style.</p>
+        </div>
+      </div>
+
+      <div class="card-hover rounded-2xl overflow-hidden text-center bg-white shadow-lg">
+        <div class="relative h-40 w-full">
+          <img src="Assets/jpg/cateyeframe.jpg" alt="Cat-Eye Frames" class="object-cover w-full h-full" />
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 backdrop-blur-sm text-white py-2 px-4 text-lg font-semibold">
+            Cat-Eye Frames
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600">Elegant frames with an upswept design.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 bg-primary text-white text-center">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-4">Ready to Find Your Perfect Eyewear?</h2>
+    <p class="text-lg mb-8 text-blue-100">Book a consultation with our ey
